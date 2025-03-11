@@ -1,4 +1,3 @@
-# jan25-p03
 Ng Ru Ying AI300 Project
 
 ---

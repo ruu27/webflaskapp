@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Predict Customer Churn</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+    <div>
+        <h1>Predict Customer Churn</h1>
+        <form method="POST">
+            <label for="contract_type">Contract Type:</label><br>
+            <select name="contract_type" id="contract_type">
+                <option value=2>Two year</option>
+                <option value=1>One year</option>
+                <option value=0 selected>Month-to-month</option>
+            </select><br><br>
+
+            <label for="internet_type">Internet Type:</label><br>
+                <select name="internet_type" id="internet_type">
+                <option value="0">Cable</option>
+                <option value="0">DSL</option>
+                <option value="1" selected>Fiber Optic</option>
+                <option value="0">None</option>
+            </select><br><br>
+
+            <label for="payment_method">Payment Method:</label><br>
+                <select name="payment_method" id="payment_method">
+                <option value="0">Bank Withdrawal</option>
+                <option value="1">Credit Card</option>
+                <option value="0" selected>Mailed Check</option>
+            </select><br><br>
+            
+            <label for="num_referrals">Number of referrals made:</label><br>
+            <input type="text" id="num_referrals" name="num_referrals" value="0"><br><br>
+
+            <label for="num_dependents">Number of dependents:</label><br>
+            <input type="text" id="num_dependents" name="num_dependents" value="0"><br><br>
+
+            <label for="tenure_months">Number of tenure months:</label><br>
+            <input type="text" id="tenure_months" name="tenure_months" value="51"><br><br>
+
+            <label for="total_monthly_fee">Total monthly fee ($):</label><br>
+            <input type="text" id="total_monthly_fee" name="total_monthly_fee" value="97.8"><br><br>
+
+            <label for="paperless_billing">Paperless Billing used:</label><br>
+            <select name="paperless_billing" id="paperless_billing">
+            <option value="1" selected>Yes</option>
+            <option value="0">No</option>
+            </select><br><br>
+
+            <label for="age">Age:</label><br>
+            <input type="text" id="age" name="age" value="70"><br><br>
+
+            <input type="submit" value="Predict">
+        </form>
+
+        {% if errors %}
+            <p>Errors: {{ errors }}</p>
+        {% endif %}
+
+        {% if formatted_pred is defined %}
+            <h2>Model Prediction: {{ formatted_pred }} 
+                {% if formatted_pred == "Yes, customer will churn" %}
+                    &#128994; <!-- Green circle -->
+                {% else %}
+                    &#128308; <!-- Red circle -->
+                {% endif %}
+            </h2>
+            <!-- <p>Inputs: {{ form_input }} </p> -->
+        {% endif %}
+    </div>
+</body>
+</html>

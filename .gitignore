@@ -1,0 +1,10 @@
+notebooks/alldata.csv
+notebooks/data.csv
+notebooks/catboost_info
+notebooks/research_win.ipynb
+notebooks/research_gb.ipynb
+src/model/catboost_model.pkl
+src/model/gbmodel.pkl
+venv
+src/Untitled-1.ipynb
+src/__pycache__

@@ -1,9 +1,6 @@
 Ng Ru Ying AI300 Project
 
 ---
-Deployed Flask AWS website: 
-http://ec2-13-215-202-61.ap-southeast-1.compute.amazonaws.com/
-
 Chosen model:
 CatBoostClassifier
 

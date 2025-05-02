@@ -47,7 +47,7 @@ DOCKER
 - Dockerfile for deploying onto Docker
 
 AWS
-- Deployment onto AWS (website above)
+- Deployment onto AWS
 - API request call for predictions tested on Jupyter (api_request.ipynb)
 Note: Predictions from CatBoostClassifier are only 0 or 1. Results have been converted to
 "No, customer will not churn" or "Yes, customer will churn".
